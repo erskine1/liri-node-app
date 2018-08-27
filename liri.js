@@ -11,11 +11,13 @@ var nodeArgs = process.argv;
 var searchType = process.argv[2];
 var searchParam = "";
 
-// Search parameter
+// Search parameter for Bands and OMDB api request
+// Currently if a search contains a special character or apostrophe it must be entered in quotes
 for (var i = 3; i < nodeArgs.length; i++) {
   if (i > 2 && i < nodeArgs.length) {
     var tempString = nodeArgs[i] + " ";
     searchParam += tempString; 
+    // console.log(searchParam);
   }  
 }
 
@@ -34,13 +36,21 @@ if (searchType === 'concert-this') {
   })
 }
 
+// Works, but also returns error?
 else if (searchType === 'spotify-this-song') {
-  spotify.search({ type: 'track', query: searchParam, limit: 20 }, function(err, data) {
+  spotify.search({ type: 'track', query: searchParam, limit: 5 }, function(err, data) {
     if (err) {
       return console.log('Spotify error: ' + err);
     }
-
-    console.log(data); 
+    console.log("Search results:");
+    for (i = 0; i < 6; i++) {
+      console.log("--------------------------------");
+      console.log("Artist: " + data.tracks.items[i].artists[0].name);
+      console.log("Song: " + data.tracks.items[i].name);
+      // console.log(data.tracks.items[i].preview_url);
+      console.log("Album: " + data.tracks.items[i].album.name);
+      console.log("--------------------------------");
+    }
   })
 }
 
