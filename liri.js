@@ -30,7 +30,8 @@ var searchString = encodeURIComponent(searchParam.trim());
 function bandSearch() {
   request("https://rest.bandsintown.com/artists/" + searchString + "/events?app_id=codingbootcamp", function(error, response, body) {
     if (!error && response.statusCode === 200) {
-      console.log("Next performance:")
+      console.log("--------------------------------");
+      console.log("Next performance for " + searchParam);
       console.log("Venue: " + JSON.parse(body)[0].venue.name);
       console.log("Location: " + JSON.parse(body)[0].venue.city);
       console.log("Date: " + JSON.parse(body)[0].datetime);
@@ -58,9 +59,9 @@ function songSearch() {
 
 function movSearch() {
   request("http://www.omdbapi.com/?t=" + searchString + "&y=&plot=short&apikey=trilogy", function(error, response, body) {
-    console.log(searchString);
     if (!error && response.statusCode === 200) {
-      console.log("Title: " + JSON.parse(body).Title);
+      console.log("--------------------------------");
+      console.log("Movie Title: " + JSON.parse(body).Title);
       console.log("Year: " + JSON.parse(body).Year);
       console.log("IMDB Rating: " + JSON.parse(body).imdbRating);
       console.log("Rotten Tomatoes: " + JSON.parse(body).Ratings[1].Value);
@@ -120,9 +121,11 @@ else if (searchType === 'do-what-it-says') {
     // console.log(lineArr);
 
     searchType = lineArr[0];
-    searchParam = lineArr[1];
+    searchParam = JSON.parse(lineArr[1]);
+    searchString = encodeURIComponent(searchParam.trim());
+
     if (searchType === 'concert-this') {
-      console.log('Executing band search'); // TESTING
+      console.log('Executing band search ' + searchParam); // TESTING
       bandSearch();
     }
     else if (searchType === 'spotify-this-song') {
@@ -130,8 +133,7 @@ else if (searchType === 'do-what-it-says') {
       songSearch();
     }
     else if (searchType === 'movie-this') {
-      searchString = encodeURIComponent(searchParam.trim());
-      console.log('Executing omdb search'); // TESTING
+      console.log('Executing omdb search ' + searchParam); // TESTING
       movSearch();
     }
   })
