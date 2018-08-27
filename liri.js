@@ -16,14 +16,28 @@ var searchParam = "";
 // Search parameter
 // Currently if a search contains a special character or apostrophe it must be entered in quotes
 for (var i = 3; i < nodeArgs.length; i++) {
+  if(nodeArgs[i].indexOf("'") === -1){
+    nodeArgs[i].replace("'", "")
+  }
   if (i > 2 && i < nodeArgs.length) {
+    // var tempArg = JSON.stringify(nodeArgs[i]).replace(/'/g, "\\'");
+    // console.log(tempArg);
+    // var tempString = JSON.parse(tempArg) + " ";
+    // console.log(tempString);
     var tempString = nodeArgs[i] + " ";
     searchParam += tempString; 
+    console.log(searchParam)
   }  
 }
 
+// TESTING 
+// var tempTest = JSON.stringify(searchParam.trim()).replace(/'/g, "\\'");
+// console.log(tempTest);
+console.log(searchParam);
+
 // encode for Bands and OMDB api request URL
 var searchString = encodeURIComponent(searchParam.trim());
+console.log(searchString);
 
 // functions 
 
@@ -82,7 +96,7 @@ else if (searchType === 'spotify-this-song') {
   songSearch();
 }
 else if (searchType === 'movie-this') {
-  movSearch();
+  // movSearch();
 }
 else if (searchType === 'do-what-it-says') {
   // fs.readFile("random.txt", "utf8", function(error, data) {
