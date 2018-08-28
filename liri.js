@@ -15,7 +15,6 @@ var searchType = process.argv[2];
 var searchParam = "";
 
 // Search parameter
-// Currently if a search contains a special character or apostrophe it must be escaped or entered in quotes
 for (var i = 3; i < nodeArgs.length; i++) {
   if (i > 2 && i < nodeArgs.length) {
     var tempString = nodeArgs[i] + " ";
@@ -23,12 +22,12 @@ for (var i = 3; i < nodeArgs.length; i++) {
   }  
 }
 
-// encode for Bands and OMDB api request URL
+// encode search for API request URL
 var searchString = encodeURIComponent(searchParam.trim()).replace(/'/g, "%27");
 
 // FUNCTIONS
 
-// Log function to console log AND log to text file
+// Console and log.txt
 function log(message) {
   console.log(message);
   var now = moment().format('ddd MMM D hh:mm:ss YYYY');
@@ -39,6 +38,7 @@ function log(message) {
   })
 }
 
+// bandsintown search
 function bandSearch() {
   request("https://rest.bandsintown.com/artists/" + searchString + "/events?app_id=codingbootcamp", function(error, response, body) {
     if (!error && response.statusCode === 200) {
@@ -52,6 +52,7 @@ function bandSearch() {
   })
 }
 
+// spotify search
 function songSearch() {
   spotify.search({ type: 'track', query: searchParam }, function(err, data) {
     if (err) {
@@ -70,6 +71,7 @@ function songSearch() {
   })
 }
 
+// omdb search
 function movSearch() {
   if (searchString === "") {
     searchString += encodeURIComponent("Mr. Nobody");
