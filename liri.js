@@ -31,7 +31,8 @@ var searchString = encodeURIComponent(searchParam.trim()).replace(/'/g, "%27");
 // Log function to console log AND log to text file
 function log(message) {
   console.log(message);
-  fs.appendFile("log.txt", message + "\n", function(err) {
+  var now = moment().format('ddd MMM D hh:mm:ss YYYY');
+  fs.appendFile("log.txt", `[${now}] ` + message + "\n", function(err) {
     if (err) {
       console.log(err);
     }
