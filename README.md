@@ -50,3 +50,9 @@ Please note that when entering a search parameter in the command line, any searc
 `node liri.js movie-this "Bill & Ted's Excellent Adventure"`
 
 `node liri.js movie-this Rosemary\'s Baby`
+
+Lastly, use of the Spotify API requires the use of a .env file containing your own Spotify developer ID and SECRET. Node packages used in this project include the following:
+* dotenv
+* moment
+* node-spotify-api
+* request
