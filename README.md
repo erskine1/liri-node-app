@@ -36,12 +36,6 @@ Venue: The Royal Albert Hall
 Date: 09/09/2018
 Location: London
 ```
-Please note that due to the use of the command line to run the app, any searches containing special characters will need to be enclosed in quotes, or escape those characters in the command line.
-
-Ex. `node liri.js movie-this "Bill & Ted's Excellent Adventure"`
-
-Ex. `node liri.js movie-this Rosemary\'s Baby`
-
 Additionally, a fourth command will read the contents of `random.txt` and call any commands listed there.
 
 Ex. `node liri.js do-what-it-says`
@@ -52,3 +46,8 @@ spotify-this-song,"Human"
 movie-this,"The Matrix"
 concert-this,"Ozzy Osbourne"
 ```
+Please note that when entering a search parameter in the command line, any searches containing special characters will need to be enclosed in quotes, or escape those characters in the command line.
+
+Ex. `node liri.js movie-this "Bill & Ted's Excellent Adventure"`
+
+Ex. `node liri.js movie-this Rosemary\'s Baby`
