@@ -17,6 +17,7 @@ Cast: Bruce Willis, Gary Oldman, Ian Holm, Milla Jovovich
 Year: 1997  
 ```
 * Songs from Spotify
+
 Ex. `node liri.js spotify-this-song House of the Rising Sun` returns:
 ```
 Artist: The Animals
@@ -27,6 +28,7 @@ Album: The Animals
 ```
 
 * Concerts from Bandsintown
+
 Ex. `node liri.js concert-this Ghost` returns:
 ```
 Next performance for Ghost 
@@ -37,7 +39,9 @@ Location: London
 Please note that due to the use of the command line to run the app, any special characters will need to be escaped or the search enclosed in quotes.
 
 Additionally, a fourth command will read the contents of `random.txt` and call any commands listed there.
+
 Ex. `node liri.js do-what-it-says`
+
 Commands in `random.txt` should be written on separate lines in the following format:
 ```
 spotify-this-song,"Human"
