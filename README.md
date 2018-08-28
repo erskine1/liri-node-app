@@ -36,7 +36,11 @@ Venue: The Royal Albert Hall
 Date: 09/09/2018
 Location: London
 ```
-Please note that due to the use of the command line to run the app, any special characters will need to be escaped or the search enclosed in quotes.
+Please note that due to the use of the command line to run the app, any searches containing special characters will need to be enclosed in quotes, or escape those characters in the command line.
+
+Ex. `node liri.js movie-this "Bill & Ted's Excellent Adventure"
+
+Ex. `node liri.js movie-this Rosemary\'s Baby
 
 Additionally, a fourth command will read the contents of `random.txt` and call any commands listed there.
 
