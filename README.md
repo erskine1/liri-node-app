@@ -5,7 +5,7 @@ This is a command line application that takes in parameters and returns data fro
 * Songs from Spotify
 * Concerts from Bandsintown
 
-Ex. `node liri.js movie-this The Fifth Element` returns:
+`node liri.js movie-this The Fifth Element` returns:
 ```
 Movie Title: The Fifth Element  
 Country: France
@@ -19,7 +19,7 @@ Cast: Bruce Willis, Gary Oldman, Ian Holm, Milla Jovovich
 Year: 1997  
 ```
 
-Ex. `node liri.js spotify-this-song House of the Rising Sun` returns:
+`node liri.js spotify-this-song House of the Rising Sun` returns:
 ```
 Artist: The Animals
 Song: House Of The Rising Sun
@@ -28,7 +28,7 @@ Album: The Animals
 ... (will return multiple results)
 ```
 
-Ex. `node liri.js concert-this Ghost` returns:
+`node liri.js concert-this Ghost` returns:
 ```
 Next performance for Ghost 
 Venue: The Royal Albert Hall
@@ -37,7 +37,7 @@ Location: London
 ```
 Additionally, a fourth command will read the contents of `random.txt` and call any commands listed there.
 
-Ex. `node liri.js do-what-it-says`
+`node liri.js do-what-it-says`
 
 Commands in `random.txt` should be written on separate lines in the following format:
 ```
@@ -45,8 +45,8 @@ spotify-this-song,"Human"
 movie-this,"The Matrix"
 concert-this,"Ozzy Osbourne"
 ```
-Please note that when entering a search parameter in the command line, any searches containing special characters will need to be enclosed in quotes, or escape those characters in the command line.
+Please note that when entering a search parameter in the command line, any searches containing special characters will need to be enclosed in quotes, or escape those characters in the command line:
 
-Ex. `node liri.js movie-this "Bill & Ted's Excellent Adventure"`
+`node liri.js movie-this "Bill & Ted's Excellent Adventure"`
 
-Ex. `node liri.js movie-this Rosemary\'s Baby`
+`node liri.js movie-this Rosemary\'s Baby`
