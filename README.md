@@ -1,5 +1,5 @@
 ## liri-node-app
-This is a command line application that takes in parameters and returns data for:
+This is a command line application that takes in parameters and returns data from the relevant API. Data is logged both in the console and in a log.txt file. Valid searches include the following:
 
 * Movies from OMDB
 
@@ -23,7 +23,7 @@ Artist: The Animals
 Song: House Of The Rising Sun
 Preview link: null
 Album: The Animals
-...
+... (will return multiple results)
 ```
 
 * Concerts from Bandsintown
@@ -35,3 +35,12 @@ Date: 09/09/2018
 Location: London
 ```
 Please note that due to the use of the command line to run the app, any special characters will need to be escaped or the search enclosed in quotes.
+
+Additionally, a fourth command will read the contents of `random.txt` and call any commands listed there.
+Ex. `node liri.js do-what-it-says`
+Commands in `random.txt` should be written on separate lines in the following format:
+```
+spotify-this-song,"Human"
+movie-this,"The Matrix"
+concert-this,"Ozzy Osbourne"
+```

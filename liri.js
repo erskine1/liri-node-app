@@ -113,15 +113,12 @@ else if (searchType === 'do-what-it-says') {
     searchString = encodeURIComponent(searchParam.trim());
 
     if (searchType === 'concert-this') {
-      console.log('Executing band search ' + searchParam); // TESTING
       bandSearch();
     }
     else if (searchType === 'spotify-this-song') {
-      console.log('Executing spotify search ' + searchParam); // TESTING
       songSearch();
     }
     else if (searchType === 'movie-this') {
-      console.log('Executing omdb search ' + searchParam); // TESTING
       movSearch();
     }
   })
