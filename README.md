@@ -1,5 +1,5 @@
 ## liri-node-app
-This is a command line application that takes in parameters and returns data from the relevant API. Data is logged both in the console and in a log.txt file. Valid searches include the following:
+This is a command line application that takes in search parameters for movies, songs, and concerts and returns data from the relevant API. Data is logged both in the console and in a log.txt file. Valid searches include the following:
 
 * Movies from OMDB
 * Songs from Spotify
