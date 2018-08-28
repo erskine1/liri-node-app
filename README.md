@@ -2,6 +2,8 @@
 This is a command line application that takes in parameters and returns data from the relevant API. Data is logged both in the console and in a log.txt file. Valid searches include the following:
 
 * Movies from OMDB
+* Songs from Spotify
+* Concerts from Bandsintown
 
 Ex. `node liri.js movie-this The Fifth Element` returns:
 ```
@@ -16,7 +18,6 @@ Rotten Tomatoes: 71%
 Cast: Bruce Willis, Gary Oldman, Ian Holm, Milla Jovovich  
 Year: 1997  
 ```
-* Songs from Spotify
 
 Ex. `node liri.js spotify-this-song House of the Rising Sun` returns:
 ```
@@ -26,8 +27,6 @@ Preview link: null
 Album: The Animals
 ... (will return multiple results)
 ```
-
-* Concerts from Bandsintown
 
 Ex. `node liri.js concert-this Ghost` returns:
 ```
